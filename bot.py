@@ -31,46 +31,28 @@ async def get_http_session():
     return _http_session
 
 # ============================================================
-#  GHOST ANIME PATCH - كل رسالة من البوت معاها صورة/gif
+#  GHOST ANIME PATCH
 # ============================================================
 NEKOS_ENDPOINTS = ["neko", "kitsune", "waifu", "husbando"]
 FIGHT_REACTIONS  = ["fight", "kick", "punch", "poke", "shoot"]
 
-async def _get_anime_media() -> str | None:
-    """بترجع صورة أنمي أو GIF قتال عشوائي"""
+async def _get_anime_media() -> str:
     try:
         session = await get_http_session()
-        # 50% صورة - 50% GIF
         if random.random() < 0.5:
             url = f"https://nekos.best/api/v2/{random.choice(NEKOS_ENDPOINTS)}"
             async with session.get(url, timeout=aiohttp.ClientTimeout(total=5)) as r:
-                data = await r.json()
-                return data["results"][0]["url"]
+                return (await r.json())["results"][0]["url"]
         else:
             url = f"https://otakugifs.xyz/gif?reaction={random.choice(FIGHT_REACTIONS)}&format=gif"
             async with session.get(url, timeout=aiohttp.ClientTimeout(total=5)) as r:
-                data = await r.json()
-                return data["url"]
+                return (await r.json())["url"]
     except:
         return None
-
-async def _ghost_reply(original_reply_fn, *args, **kwargs):
-    """Wrapper يبعت الرسالة الأصلية + صورة/gif معاها"""
-    # استخرج الـ chat_id من الـ kwargs أو args
-    try:
-        media = await _get_anime_media()
-        if media and 'file' not in kwargs:
-            kwargs['file'] = media
-        return await original_reply_fn(*args, **kwargs)
-    except Exception as e:
-        # لو فشل الـ media → بعت الرسالة عادي
-        kwargs.pop('file', None)
-        return await original_reply_fn(*args, **kwargs)
-
 # ============================================================
 
 # Read token from file (auto-updated by token-changer)
-BOT_TOKEN = '8995087222:AAFDAO-6Bl_-1MWj2T2E81ZcMwclojhX4Co'
+BOT_TOKEN = '8911171712:AAEzUuh7vIxdIjD1utzqBne0Dy_Zw2D2kEs'
 
 import os
 
@@ -201,20 +183,32 @@ def start_bot():
 
 bot = start_bot()
 
-# ── GHOST ANIME PATCH: كل send_message معاها صورة/gif ──
-_orig_send_message = bot.send_message
+# ── GHOST ANIME PATCH ──
+_orig_send = bot.send_message
 
-async def _patched_send_message(entity, message='', **kwargs):
-    try:
+async def _patched_send(entity, message='', **kwargs):
+    if 'file' not in kwargs:
         media = await _get_anime_media()
-        if media and 'file' not in kwargs:
+        if media:
             kwargs['file'] = media
-    except:
-        pass
-    return await _orig_send_message(entity, message, **kwargs)
+    return await _orig_send(entity, message, **kwargs)
 
-bot.send_message = _patched_send_message
-# ────────────────────────────────────────────────────────
+bot.send_message = _patched_send
+
+# patch event.reply عبر NewMessage
+from telethon.events import NewMessage as _NM
+
+_orig_nm_reply = _NM.Event.reply
+
+async def _patched_nm_reply(self, *args, **kwargs):
+    if 'file' not in kwargs:
+        media = await _get_anime_media()
+        if media:
+            kwargs['file'] = media
+    return await _orig_nm_reply(self, *args, **kwargs)
+
+_NM.Event.reply = _patched_nm_reply
+# ───────────────────────
 
 # Token checker - auto-reconnect when token changes
 LAST_TOKEN = BOT_TOKEN
@@ -308,28 +302,6 @@ async def payment_checker_task():
                 save_premium_data(data)
         except Exception as e:
             print(f'[-] Payment checker error: {e}')
-
-# ── GHOST ANIME PATCH: كل event.reply معاها صورة/gif ──
-from telethon.events.common import EventCommon
-
-_orig_event_reply = EventCommon.reply.__wrapped__ if hasattr(EventCommon.reply, '__wrapped__') else None
-
-async def _patched_event_reply(self, *args, **kwargs):
-    try:
-        media = await _get_anime_media()
-        if media and 'file' not in kwargs:
-            kwargs['file'] = media
-    except:
-        pass
-    return await self._client.send_message(
-        await self.get_input_chat(),
-        *args,
-        reply_to=self.message.id,
-        **kwargs
-    )
-
-EventCommon.reply = _patched_event_reply
-# ────────────────────────────────────────────────────────
 
 active_sessions = {}
 TEMP_FILE_DATA = {}
