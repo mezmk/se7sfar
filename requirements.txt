@@ -1,0 +1,6 @@
+telethon
+aiohttp
+aiofiles
+flask
+requests
+colorama

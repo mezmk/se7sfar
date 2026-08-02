@@ -1,0 +1,203 @@
+{
+    "ZNZII_F7D37PZDDH1A9VT": {
+        "type": "time_limit",
+        "hours": 999999,
+        "expiry": "2140-08-23T16:17:34.145163",
+        "user_limit": 1,
+        "used_count": 1,
+        "used_by": [
+            "8987165792"
+        ],
+        "created_at": "2026-07-26T01:17:34.145163",
+        "created_by": 8987165792,
+        "used_at": "2026-07-26T01:17:46.399514"
+    },
+    "ZNZII_HPN360S9RGB6JKY": {
+        "type": "time_limit",
+        "hours": 4694846,
+        "expiry": "2562-02-24T16:15:17.697384",
+        "user_limit": 1,
+        "used_count": 1,
+        "used_by": [
+            "7671957436"
+        ],
+        "created_at": "2026-07-26T02:15:17.697384",
+        "created_by": 7671957436,
+        "used_at": "2026-07-26T02:15:24.626093"
+    },
+    "ZNZII_LUBT6WCW1K00YVY": {
+        "type": "time_limit",
+        "hours": 10,
+        "expiry": "2026-07-28T07:49:52.352607",
+        "user_limit": 1,
+        "used_count": 1,
+        "used_by": [
+            "7073940914"
+        ],
+        "created_at": "2026-07-27T21:49:52.352607",
+        "created_by": 8987165792,
+        "used_at": "2026-07-27T21:50:23.479464"
+    },
+    "ZNZII_O0TT3AYGHAJ6ORG": {
+        "type": "time_limit",
+        "hours": 48,
+        "expiry": "2026-07-30T12:36:32.607719",
+        "user_limit": 1,
+        "used_count": 1,
+        "used_by": [
+            "8253750628"
+        ],
+        "created_at": "2026-07-28T12:36:32.607719",
+        "created_by": 8987165792,
+        "used_at": "2026-07-28T12:37:13.942064"
+    },
+    "ZNZII_ITPMHF6YUUGO69Q": {
+        "type": "time_limit",
+        "hours": 48,
+        "expiry": "2026-07-30T17:00:58.514398",
+        "user_limit": 1,
+        "used_count": 0,
+        "used_by": [],
+        "created_at": "2026-07-28T17:00:58.514398",
+        "created_by": 7671957436
+    },
+    "ZNZII_HTX0C65K1EIFTLV": {
+        "type": "time_limit",
+        "hours": 48,
+        "expiry": "2026-07-30T17:30:15.058649",
+        "user_limit": 1,
+        "used_count": 1,
+        "used_by": [
+            "8253750628"
+        ],
+        "created_at": "2026-07-28T17:30:15.058649",
+        "created_by": 8987165792,
+        "used_at": "2026-07-29T01:01:14.878501"
+    },
+    "ZNZII_7BZQ3R913IB4LD0": {
+        "type": "time_limit",
+        "hours": 48,
+        "expiry": "2026-07-31T08:27:07.039433",
+        "user_limit": 1,
+        "used_count": 1,
+        "used_by": [
+            "1334855513"
+        ],
+        "created_at": "2026-07-29T08:27:07.039433",
+        "created_by": 7671957436,
+        "used_at": "2026-07-29T08:28:28.896846"
+    },
+    "ZNZII_8ZPWQ81NGJJZ2T5": {
+        "type": "time_limit",
+        "hours": 24,
+        "expiry": "2026-07-31T13:34:29.459399",
+        "user_limit": 1,
+        "used_count": 0,
+        "used_by": [],
+        "created_at": "2026-07-30T13:34:29.459399",
+        "created_by": 7671957436
+    },
+    "ZNZII_0QUQ8RK5Y9ZNZ1D": {
+        "type": "time_limit",
+        "hours": 10,
+        "expiry": "2026-08-01T10:58:37.021978",
+        "user_limit": 1,
+        "used_count": 1,
+        "used_by": [
+            "7073940914"
+        ],
+        "created_at": "2026-08-01T00:58:37.021978",
+        "created_by": 8987165792,
+        "used_at": "2026-08-01T00:59:35.883755"
+    },
+    "ZNZII_49S54V23W4GCN7W": {
+        "type": "time_limit",
+        "hours": 10,
+        "expiry": "2026-08-01T11:01:48.304323",
+        "user_limit": 1,
+        "used_count": 1,
+        "used_by": [
+            "8235635142"
+        ],
+        "created_at": "2026-08-01T01:01:48.304323",
+        "created_by": 8987165792,
+        "used_at": "2026-08-01T01:02:23.893532"
+    },
+    "ZNZII_4REF8D7E2KLLKSY": {
+        "type": "time_limit",
+        "hours": 10,
+        "expiry": "2026-08-01T12:30:15.878431",
+        "user_limit": 2,
+        "used_count": 2,
+        "used_by": [
+            "8961155044",
+            "7558636153"
+        ],
+        "created_at": "2026-08-01T02:30:15.878431",
+        "created_by": 8987165792,
+        "used_at": "2026-08-01T02:32:48.741953"
+    },
+    "ZNZII_VITA04OG1AMKPW6": {
+        "type": "time_limit",
+        "hours": 48,
+        "expiry": "2026-08-03T03:30:24.662405",
+        "user_limit": 1,
+        "used_count": 1,
+        "used_by": [
+            "7558636153"
+        ],
+        "created_at": "2026-08-01T03:30:24.662405",
+        "created_by": 7671957436,
+        "used_at": "2026-08-01T03:30:51.571554"
+    },
+    "ZNZII_MA4LLANNC1XWJNI": {
+        "type": "time_limit",
+        "hours": 10,
+        "expiry": "2026-08-01T13:35:51.582004",
+        "user_limit": 1,
+        "used_count": 1,
+        "used_by": [
+            "8961155044"
+        ],
+        "created_at": "2026-08-01T03:35:51.582004",
+        "created_by": 7671957436,
+        "used_at": "2026-08-01T03:36:18.783789"
+    },
+    "ZNZII_1JV6CCN78JJXMCD": {
+        "type": "time_limit",
+        "hours": 15,
+        "expiry": "2026-08-03T03:41:10.518643",
+        "user_limit": 3,
+        "used_count": 0,
+        "used_by": [],
+        "created_at": "2026-08-02T12:41:10.518643",
+        "created_by": 7671957436
+    },
+    "ZNZII_46WDSXYG4ZQQNAH": {
+        "type": "time_limit",
+        "hours": 3,
+        "expiry": "2026-08-02T15:41:23.706563",
+        "user_limit": 15,
+        "used_count": 15,
+        "used_by": [
+            "1907754088",
+            "1334855513",
+            "8617220777",
+            "7360274429",
+            "8474331313",
+            "8099854214",
+            "8851399074",
+            "7635063739",
+            "7132574193",
+            "2042440991",
+            "1061332930",
+            "821905943",
+            "8004832880",
+            "6781479038",
+            "8897669196"
+        ],
+        "created_at": "2026-08-02T12:41:23.706563",
+        "created_by": 7671957436,
+        "used_at": "2026-08-02T13:00:53.319077"
+    }
+}
